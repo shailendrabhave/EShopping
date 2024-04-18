@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Shailendra\\Code\\EShopping\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|c:\\shailendra\\code\\eshopping\\ordering.infrastructure\\data\\ordercontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|solutionrelative:ordering.infrastructure\\data\\ordercontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED1C0C08-87AB-4546-AE33-78C8FC308716}|Ordering.API\\Ordering.API.csproj|c:\\shailendra\\code\\eshopping\\ordering.api\\extensions\\dbextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED1C0C08-87AB-4546-AE33-78C8FC308716}|Ordering.API\\Ordering.API.csproj|solutionrelative:ordering.api\\extensions\\dbextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853E9F7F-B8D6-45D0-8904-0DEE1353C924}|Ordering.Core\\Ordering.Core.csproj|c:\\shailendra\\code\\eshopping\\ordering.core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853E9F7F-B8D6-45D0-8904-0DEE1353C924}|Ordering.Core\\Ordering.Core.csproj|solutionrelative:ordering.core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|c:\\shailendra\\code\\eshopping\\ordering.infrastructure\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|solutionrelative:ordering.infrastructure\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED1C0C08-87AB-4546-AE33-78C8FC308716}|Ordering.API\\Ordering.API.csproj|c:\\shailendra\\code\\eshopping\\ordering.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED1C0C08-87AB-4546-AE33-78C8FC308716}|Ordering.API\\Ordering.API.csproj|solutionrelative:ordering.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|c:\\shailendra\\code\\eshopping\\ordering.infrastructure\\data\\ordercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|solutionrelative:ordering.infrastructure\\data\\ordercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C330228-F317-420A-9870-8FB75A0DEC9F}|docker-compose.dcproj|c:\\shailendra\\code\\eshopping\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6C330228-F317-420A-9870-8FB75A0DEC9F}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|c:\\shailendra\\code\\eshopping\\ordering.infrastructure\\extensions\\infraservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|solutionrelative:ordering.infrastructure\\extensions\\infraservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|c:\\shailendra\\code\\eshopping\\ordering.infrastructure\\data\\ordercontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC70919F-7AB8-4B1C-848A-276A255B4951}|Ordering.Infrastructure\\Ordering.Infrastructure.csproj|solutionrelative:ordering.infrastructure\\data\\ordercontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED1C0C08-87AB-4546-AE33-78C8FC308716}|Ordering.API\\Ordering.API.csproj|c:\\shailendra\\code\\eshopping\\ordering.api\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED1C0C08-87AB-4546-AE33-78C8FC308716}|Ordering.API\\Ordering.API.csproj|solutionrelative:ordering.api\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.Core\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Ordering.Core\\Entities\\Order.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.Core\\Entities\\Order.cs",
+              "RelativeToolTip": "Ordering.Core\\Entities\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T15:24:41.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Ordering.Infrastructure\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "Ordering.Infrastructure\\Repositories\\OrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T15:24:23.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAGMAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-04-17T14:53:29.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderContext.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Data\\OrderContext.cs",
+              "RelativeDocumentMoniker": "Ordering.Infrastructure\\Data\\OrderContext.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Data\\OrderContext.cs",
+              "RelativeToolTip": "Ordering.Infrastructure\\Data\\OrderContext.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwA0AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:27:36.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.API\\Program.cs",
+              "RelativeDocumentMoniker": "Ordering.API\\Program.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.API\\Program.cs",
+              "RelativeToolTip": "Ordering.API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:18:53.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.API\\Startup.cs",
+              "RelativeDocumentMoniker": "Ordering.API\\Startup.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.API\\Startup.cs",
+              "RelativeToolTip": "Ordering.API\\Startup.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:17:44.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DBExtension.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.API\\Extensions\\DBExtension.cs",
+              "RelativeDocumentMoniker": "Ordering.API\\Extensions\\DBExtension.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.API\\Extensions\\DBExtension.cs",
+              "RelativeToolTip": "Ordering.API\\Extensions\\DBExtension.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAIwCAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T13:57:18.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderContextSeed.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Data\\OrderContextSeed.cs",
+              "RelativeDocumentMoniker": "Ordering.Infrastructure\\Data\\OrderContextSeed.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Data\\OrderContextSeed.cs",
+              "RelativeToolTip": "Ordering.Infrastructure\\Data\\OrderContextSeed.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwDEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:06:01.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderContextFactory.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Data\\OrderContextFactory.cs",
+              "RelativeDocumentMoniker": "Ordering.Infrastructure\\Data\\OrderContextFactory.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Data\\OrderContextFactory.cs",
+              "RelativeToolTip": "Ordering.Infrastructure\\Data\\OrderContextFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:05:54.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InfraServices.cs",
+              "DocumentMoniker": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Extensions\\InfraServices.cs",
+              "RelativeDocumentMoniker": "Ordering.Infrastructure\\Extensions\\InfraServices.cs",
+              "ToolTip": "C:\\Shailendra\\Code\\EShopping\\Ordering.Infrastructure\\Extensions\\InfraServices.cs",
+              "RelativeToolTip": "Ordering.Infrastructure\\Extensions\\InfraServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:05:32.174Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
