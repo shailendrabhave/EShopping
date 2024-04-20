@@ -16,7 +16,8 @@ namespace Ordering.API.Controllers
             this.mediator = mediator;
         }
 
-        [HttpGet("{userName}", Name = "GetOrdersByUserName")]
+        [HttpGet]
+        [Route("[action]/{userName}", Name = "GetBasketByUserName")]
         [ProducesResponseType(typeof(IEnumerable<OrderReponse>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<OrderReponse>>>GetOrdersByUserName(string userName)
         {
@@ -25,7 +26,7 @@ namespace Ordering.API.Controllers
             return Ok(orders);
         }
 
-        [HttpPost(Name = "CheckoutOrder")]
+        [HttpPost("CheckoutOrder")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> CheckoutOrder([FromBody]CheckoutOrderCommand checkoutOrderCommand)
         {
@@ -33,7 +34,7 @@ namespace Ordering.API.Controllers
             return Ok(result);
         }
 
-        [HttpPut(Name = "UpdateOrder")]
+        [HttpPut("UpdateOrder")]
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -43,7 +44,8 @@ namespace Ordering.API.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}", Name = "DeleteOrder")]
+        [HttpDelete("[action]/{id}", Name = "DeleteOrder")]
+
         [ProducesDefaultResponseType]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

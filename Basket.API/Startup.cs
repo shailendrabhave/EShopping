@@ -1,10 +1,10 @@
-﻿using Basket.Application.Commands;
-using Basket.Application.GrpcService;
+﻿using Basket.Application.GrpcService;
 using Basket.Application.Handlers;
 using Basket.Core.Repositories;
 using Basket.Infrastructure.Repositories;
 using Discount.Grpc.Protos;
 using HealthChecks.UI.Client;
+using MassTransit;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
@@ -42,6 +42,14 @@ namespace Basket.API
             });
 
             services.AddHealthChecks().AddRedis(configuration["CacheSettings:ConnectionString"], "Redis Health", HealthStatus.Degraded);
+            services.AddMassTransit(config => 
+            {
+                config.UsingRabbitMq((ctx, cfg) => 
+                {
+                    cfg.Host(configuration["EventBusSettings:HostAddress"]);
+                });
+            });
+            services.AddMassTransitHostedService();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

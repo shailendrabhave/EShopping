@@ -2,7 +2,7 @@
 
 namespace Basket.Application.Mappers
 {
-    internal static class BasketMapper
+    public static class BasketMapper
     {
         private static readonly Lazy<IMapper> lazyMapper = new Lazy<IMapper>(valueFactory: () => {
 
