@@ -11,7 +11,7 @@ using System.Net;
 
 namespace Basket.API.Controllers
 {
-    public class BasketController:APIController
+    public class BasketController:ApiController
     {
         private readonly IMediator mediator;
         private readonly IPublishEndpoint publishEndpoint;

@@ -3,6 +3,11 @@ version: '3.4'
 name: eshopping
  
 services:
+  reverseproxy:
+   build:
+    context: .
+    dockerfile: nginx.Dockerfile
+
   catalogdb:
     image: mongo
 
@@ -51,9 +56,15 @@ services:
   ocelot.api.gateway:
     image: ${DOCKER_REGISTRY-}ocelotapigateway
     build:
-       context: .
-       dockerfile: Ocelot.ApiGateway/Dockerfile
-    
+        context: .
+        dockerfile: Ocelot.ApiGateway/Dockerfile
+
+  identityserver:
+    image: ${DOCKER_REGISTRY-}identityserver
+    build:
+        context: .
+        dockerfile: Identity/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:  
