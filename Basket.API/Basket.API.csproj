@@ -24,5 +24,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Basket.Application\Basket.Application.csproj" />
     <ProjectReference Include="..\Basket.Infrastructure\Basket.Infrastructure.csproj" />
+    <ProjectReference Include="..\Common.Logging\Common.Logging.csproj" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 using Basket.Application.Handlers;
 using Basket.Core.Repositories;
 using Basket.Infrastructure.Repositories;
+using Common.Logging.Correlation;
 using Discount.Grpc.Protos;
 using HealthChecks.UI.Client;
 using MassTransit;
@@ -30,6 +31,7 @@ namespace Basket.API
                 options.Configuration = configuration.GetValue<string>("CacheSettings:ConnectionString");            
             });
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateShoppingCartHandler).GetTypeInfo().Assembly));
+            services.AddScoped<ICorrelationIdGenerator, CorrelationIdGenerator>();
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<DiscountService>();
             services.AddAutoMapper(typeof(Startup));

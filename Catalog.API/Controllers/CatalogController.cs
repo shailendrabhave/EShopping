@@ -2,6 +2,7 @@
 using Catalog.Application.Queries;
 using Catalog.Application.Responses;
 using Catalog.Core.Specs;
+using Common.Logging.Correlation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -11,10 +12,13 @@ namespace Catalog.API.Controllers
     public class CatalogController : APIController
     {
         private readonly IMediator mediator;
+        private readonly ILogger<CatalogController> logger;
 
-        public CatalogController(IMediator mediator)
+        public CatalogController(IMediator mediator, ILogger<CatalogController> logger, ICorrelationIdGenerator correlationIdGenerator)
         {
             this.mediator = mediator;
+            this.logger = logger;
+            logger.LogInformation("Correlation Id:{CorrelationId}", correlationIdGenerator.Get());
         }
 
         [HttpGet]
@@ -54,6 +58,7 @@ namespace Catalog.API.Controllers
         {
             var query = new GetAllProductsQuery(catalogSpecsParams);
             var result = await mediator.Send(query);
+            logger.LogInformation("All products retrieved");
             return Ok(result);
         }
 

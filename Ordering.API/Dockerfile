@@ -12,6 +12,7 @@ COPY ["Ordering.API/Ordering.API.csproj", "Ordering.API/"]
 COPY ["Ordering.Application/Ordering.Application.csproj", "Ordering.Application/"]
 COPY ["Ordering.Core/Ordering.Core.csproj", "Ordering.Core/"]
 COPY ["Ordering.Infrastructure/Ordering.Infrastructure.csproj", "Ordering.Infrastructure/"]
+COPY ["EventBus.Messages/EventBus.Messages.csproj", "EventBus.Messages/"]
 
 RUN dotnet restore "./Ordering.API/Ordering.API.csproj"
 COPY . .

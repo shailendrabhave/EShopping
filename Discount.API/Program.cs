@@ -1,5 +1,6 @@
 using Discount.API;
 using Discount.Infrastructure.Extensions;
+using Serilog;
 
 public class Program
 {
@@ -14,5 +15,5 @@ public class Program
         Host.CreateDefaultBuilder(args)
         .ConfigureWebHostDefaults(webBuilder => {
             webBuilder.UseStartup<Startup>();
-        });
+        }).UseSerilog(Common.Logging.Logger.ConfigureLogger);
 }

@@ -1,4 +1,5 @@
-﻿using Ocelot.DependencyInjection;
+﻿using Common.Logging.Correlation;
+using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 namespace Ocelot.ApiGateway
@@ -7,6 +8,7 @@ namespace Ocelot.ApiGateway
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICorrelationIdGenerator, CorrelationIdGenerator>();
             services.AddOcelot();
             services.AddCacheManager();
         }
@@ -17,6 +19,7 @@ namespace Ocelot.ApiGateway
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.AddCorrelationMiddleware();
             app.UseRouting();
             app.UseEndpoints(e => {
                 e.MapGet("/", async context =>

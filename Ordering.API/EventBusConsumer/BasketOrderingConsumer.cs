@@ -20,9 +20,13 @@ namespace Ordering.API.EventBusConsumer
         }
         public async Task Consume(ConsumeContext<BasketCheckoutEvent> context)
         {
+            using var scope = logger.BeginScope(
+                "Consuming Basket Checkout event for Correlation Id: {CorrelationId}", 
+                context.Message.CorrelationId);
+
             var checkoutBasketCommand = mapper.Map<CheckoutOrderCommand>(context.Message);
             await mediator.Send(checkoutBasketCommand);
-            logger.LogInformation($"Bakset checkout completed");
+            logger.LogInformation("Bakset checkout completed");
 
         }
     }

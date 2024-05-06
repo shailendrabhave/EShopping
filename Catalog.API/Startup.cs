@@ -3,6 +3,7 @@ using Catalog.Application.Responses;
 using Catalog.Core.Repositories;
 using Catalog.Infrastructure.Data;
 using Catalog.Infrastructure.Repositories;
+using Common.Logging.Correlation;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -24,7 +25,6 @@ namespace Catalog.API
         {
             services.AddControllers();
             services.AddApiVersioning();
-
             var dbConnectionString = Configuration["DatabaseSettings:ConnectionString"];
             if(!String.IsNullOrEmpty(dbConnectionString))
             {
@@ -35,6 +35,7 @@ namespace Catalog.API
             services.AddSwaggerGen(swagger => swagger.SwaggerDoc(name:"v1", new OpenApiInfo(){Title = "Catalog.API", Version = "v1" }));
             services.AddAutoMapper(typeof(Startup));
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateProductHandler).GetTypeInfo().Assembly));
+            services.AddScoped<ICorrelationIdGenerator, CorrelationIdGenerator>();
             services.AddScoped<ICatalogContext, CatalogContext>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ITypesRepository, ProductRepository>();
