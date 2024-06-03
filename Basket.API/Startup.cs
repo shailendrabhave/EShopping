@@ -1,4 +1,5 @@
-﻿using Basket.Application.GrpcService;
+﻿using Basket.API.Swagger;
+using Basket.Application.GrpcService;
 using Basket.Application.Handlers;
 using Basket.Core.Repositories;
 using Basket.Infrastructure.Repositories;
@@ -7,8 +8,13 @@ using Discount.Grpc.Protos;
 using HealthChecks.UI.Client;
 using MassTransit;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 
 namespace Basket.API
@@ -24,7 +30,21 @@ namespace Basket.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddApiVersioning();
+            services.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ReportApiVersions = true;
+                options.ApiVersionReader = new HeaderApiVersionReader("X-Version");
+                options.ApiVersionReader = new MediaTypeApiVersionReader("ver");
+                options.ApiVersionReader = new QueryStringApiVersionReader("api-version", "ver");
+            });
+
+            services.AddVersionedApiExplorer(options => 
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
             
             //Redis Settings
             services.AddStackExchangeRedisCache(options => {
@@ -38,10 +58,14 @@ namespace Basket.API
             services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options => {
                 options.Address = new Uri(configuration.GetValue<string>("GRPCSettings:DiscountUrl"));
             });
-            services.AddSwaggerGen(cfg => 
+
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+
+            services.AddSwaggerGen(options => 
             {
-                cfg.SwaggerDoc("v1", new OpenApiInfo() { Title = "Basket.API", Version = "v1" });
+                options.OperationFilter<SwaggerDefaultValues>();
             });
+            
 
             services.AddHealthChecks().AddRedis(configuration["CacheSettings:ConnectionString"], "Redis Health", HealthStatus.Degraded);
             services.AddMassTransit(config => 
@@ -54,13 +78,19 @@ namespace Basket.API
             services.AddMassTransitHostedService();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(cfg => cfg.SwaggerEndpoint("/swagger/v1/swagger.json","Basket.API v1"));
+                app.UseSwaggerUI(options => 
+                {
+                    foreach(var description in provider.ApiVersionDescriptions)
+                    {
+                        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+                    }
+                });
             }
 
             app.UseHttpsRedirection();

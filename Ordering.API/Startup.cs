@@ -29,6 +29,8 @@ namespace Ordering.API
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<ICorrelationIdGenerator, CorrelationIdGenerator>();
             services.AddScoped<BasketOrderingConsumer>();
+            services.AddScoped<BasketOrderingConsumerV2>();
+
             services.AddSwaggerGen(cfg => {
                 cfg.SwaggerDoc("v1", new OpenApiInfo { Title = "Ordering.API", Version = "v1" });
             });
@@ -36,12 +38,20 @@ namespace Ordering.API
             services.AddMassTransit(config =>
             {
                 config.AddConsumer<BasketOrderingConsumer>();
+                config.AddConsumer<BasketOrderingConsumerV2>();
+
                 config.UsingRabbitMq((ctx, cfg) =>
                 {
                     cfg.Host(configuration["EventBusSettings:HostAddress"]);
                     cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c => 
                     {
                         c.ConfigureConsumer<BasketOrderingConsumer>(ctx);
+                    });
+
+                    //V2
+                    cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueueV2, c =>
+                    {
+                        c.ConfigureConsumer<BasketOrderingConsumerV2>(ctx);
                     });
                 });
             });

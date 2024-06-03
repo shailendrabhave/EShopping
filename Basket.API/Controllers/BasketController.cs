@@ -79,6 +79,6 @@ namespace Basket.API.Controllers
                 await mediator.Send(deleteBasketCommand);
 
             return Accepted();
-        } 
+        }
     }
 }

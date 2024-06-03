@@ -9,6 +9,13 @@ namespace Ocelot.ApiGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ICorrelationIdGenerator, CorrelationIdGenerator>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CORSPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                });
+            });
             services.AddOcelot();
             services.AddCacheManager();
         }
@@ -19,6 +26,7 @@ namespace Ocelot.ApiGateway
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors("CORSPolicy");
             app.AddCorrelationMiddleware();
             app.UseRouting();
             app.UseEndpoints(e => {

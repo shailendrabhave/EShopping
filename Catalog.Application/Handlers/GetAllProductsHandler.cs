@@ -27,8 +27,7 @@ namespace Catalog.Application.Handlers
                 var productList = await productRepository.GetAllProducts(request.CatalogSpecsParams);
                 var productResponseList = CatalogMapper.MapperExt.Map<Pagination<ProductResponse>>(productList);
 
-                var log = $"{productResponseList.Count} products fetched";
-                logger.LogDebug(log);
+                logger.LogDebug("{ProductCount} products fetched", productResponseList.Count);
 
                 return productResponseList;
             }

@@ -39,7 +39,7 @@
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog/GetAllBrands",
+      "DownstreamPathTemplate": "/api/v1/Catalog/GetAllProductBrands",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -47,11 +47,11 @@
           "Port": "8000"
         }
       ],
-      "UpstreamPathTemplate": "/Catalog/GetAllBrands",
+      "UpstreamPathTemplate": "/Catalog/GetAllProductBrands",
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog/GetAllTypes",
+      "DownstreamPathTemplate": "/api/v1/Catalog/GetAllProductTypes",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -59,7 +59,7 @@
           "Port": "8000"
         }
       ],
-      "UpstreamPathTemplate": "/Catalog/GetAllTypes",
+      "UpstreamPathTemplate": "/Catalog/GetAllProductTypes",
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
