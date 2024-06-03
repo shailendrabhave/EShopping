@@ -1,6 +1,18 @@
 version: '3.4'
 
 services:
+  reverseproxy:
+   container_name: nginxgateway
+   restart: always
+   depends_on:
+        - identityserver
+        - catalog.api
+        - basket.api
+        - discount.api
+        - ordering.api
+   ports:
+        - "44344:44344" 
+
   catalogdb:
     container_name: catalogdb
     restart: always 
@@ -68,6 +80,7 @@ services:
     container_name: catalog.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:8000
       - "DatabaseSettings__ConnectionString=mongodb://catalogdb:27017"
       - "DatabaseSettings__DatabaseName=CatalogDb"
       - "DatabaseSettings__ProductsCollection=Products"
@@ -83,6 +96,7 @@ services:
     container_name: basket.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:8001
       - "CacheSettings__ConnectionString=basketdb:6379"
       - "GrpcSettings__DiscountUrl=http://discount.api"
       - "EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672"
@@ -97,6 +111,7 @@ services:
     container_name: discount.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:8002
       - "DatabaseSettings__ConnectionString=Server=discountdb;Port=5432;Database=DiscountDb;User Id=admin;Password=admin1234;"
       - "ElasticConfiguration__Uri=http://elasticsearch:9200"
     depends_on:
@@ -108,6 +123,7 @@ services:
     container_name: ordering.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:8003
       - "ConnectionStrings__OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=Shail@2024;"
       - "EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672"
       - "ElasticConfiguration__Uri=http://elasticsearch:9200"
@@ -122,6 +138,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
+      - identityserver
       - catalog.api
       - basket.api
       - discount.api

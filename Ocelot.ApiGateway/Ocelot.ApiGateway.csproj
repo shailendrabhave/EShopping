@@ -15,6 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Ocelot" Version="23.2.2" />
     <PackageReference Include="Ocelot.Cache.CacheManager" Version="23.2.2" />
+	<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.14" />
   </ItemGroup>
 
   <ItemGroup>

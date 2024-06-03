@@ -3,6 +3,11 @@ version: '3.4'
 name: eshopping
  
 services:
+  reverseproxy:
+   build:
+    context: .
+    dockerfile: nginx.Dockerfile
+
   catalogdb:
     image: mongo
 
@@ -61,6 +66,15 @@ services:
     image: docker.elastic.co/kibana/kibana:7.9.2
 
        
+        context: .
+        dockerfile: Ocelot.ApiGateway/Dockerfile
+
+  identityserver:
+    image: ${DOCKER_REGISTRY-}identityserver
+    build:
+        context: .
+        dockerfile: Identity/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:  
